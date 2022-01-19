@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calcule seu IMC</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1>Calcule seu IMC</h1>
+        <div>
+            <h3>Tabela IMC</h3>
+            <table>
+                <tr>
+                    <th class="imc">IMC</th>
+                    <th class="quali">CLASSIFICAÇÃO</th>
+                    <th class="obs">OBESIDADE (GRAU)</th>
+                </tr>
+                <tr>
+                    <td class="imc" id="imc1">MENOR QUE 18,5</td>
+                    <td class="quali" id="quali1">MAGREZA</td>
+                    <td class="obs" id="obs1">0</td>
+                </tr>
+                <tr>
+                    <td class="imc" id="imc2">ENTRE 18,5 E 24,9</td>
+                    <td class="quali" id="quali2">NORMAL</td>
+                    <td class="obs" id="obs2">0</td>
+                </tr>
+                <tr>
+                    <td class="imc" id="imc3">ENTRE 25,0 E 29,9</td>
+                    <td class="quali" id="quali3">SOBREPESO</td>
+                    <td class="obs" id="obs3">I</td>
+                </tr>
+                <tr>
+                    <td class="imc" id="imc4">ENTRE 30,0 E 39,9</td>
+                    <td class="quali" id="quali4">OBESIDADE</td>
+                    <td class="obs" id="obs4">II</td>
+                </tr>
+                <tr>
+                    <td class="imc" id="imc5">MAIOR QUE 40,0</td>
+                    <td class="quali" id="quali5">OBESIDADE GRAVE</td>
+                    <td class="obs" id="obs5">III</td>
+                </tr>
+            </table>
+            <p><span style="color: red;">Atenção:</span> Não se baseie nesta tabela, ou no resultado, para se
+                diagnosticar! Procure um
+                nutricionista qualificado para lidar com
+                a sua saúde. Este é um objeto de estudo.</p>
+        </div>
+        <form id="formulario">
+            <label for="peso">Peso (ex.: 69.2)</label>
+            <input type="text" id="peso" name="peso" required autocomplete="off">
+            <label for="altura">Altura (ex.: 1.70)</label>
+            <input type="text" id="altura" name="altura" required autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="resultado"></div>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
