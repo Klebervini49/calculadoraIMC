@@ -2,19 +2,30 @@ document.querySelector('#formulario').addEventListener('submit', (e) => {
 	e.preventDefault();
 	let valorPeso = document.querySelector('#peso').value,
 		valorAltura = document.querySelector('#altura').value,
-		classeRmv = document.querySelectorAll('td'),
+		classeRmv = document.querySelectorAll('td'), // cria uma nodeList e coloca em uma variavel
 		resultClass,
 		resultadoDiv = document.querySelector('#resultado')
 
+	/**
+	 * Transforma os valores em number
+	 */
 	valorPeso = parseFloat(valorPeso);
 	valorAltura = parseFloat(valorAltura);
+
 	let result = valorPeso / (valorAltura ** 2);
 	result = parseFloat(result.toFixed(2));
 
+	/**
+	 * Remove todos as classes de cores
+	 */
+	classeRmv.forEach((i) => {
+		i.classList.remove('bad', 'bom', 'medio');
+	});
+
 	if (isNaN(result) != true) {
-		classeRmv.forEach((i) => {
-			i.classList.remove('bad', 'bom', 'medio');
-		});
+		/**
+		 * Seta as cores com base no if que a info cair e retorna elas para as linhas da tabela
+		 */
 		if (result < 18.5) {
 			resultClass = 'bad';
 			let cor1 = document.querySelectorAll('#imc1, #quali1, #obs1');
