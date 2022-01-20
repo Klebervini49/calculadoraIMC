@@ -53,15 +53,13 @@
         </div>
         <form id="formulario">
             <label for="peso">Peso (ex.: 69.2)</label>
-            <input type="text" id="peso" name="peso" required autocomplete="off">
+            <input type="text" id="peso" name="peso" maxlength="6" required autocomplete="off">
             <label for="altura">Altura (ex.: 1.70)</label>
-            <input type="text" id="altura" name="altura" required autocomplete="off">
+            <input type="text" id="altura" name="altura" maxlength="4" required autocomplete="off">
             <button type="submit">Calcular</button>
         </form>
-
         <div id="resultado"></div>
     </section>
-
     <script src="./assets/js/main.js"></script>
 </body>
 
