@@ -3,7 +3,8 @@ document.querySelector('#formulario').addEventListener('submit', (e) => {
 	let valorPeso = document.querySelector('#peso').value,
 		valorAltura = document.querySelector('#altura').value,
 		classeRmv = document.querySelectorAll('td'),
-		resultClass;
+		resultClass,
+		resultadoDiv = document.querySelector('#resultado')
 
 	valorPeso = parseFloat(valorPeso);
 	valorAltura = parseFloat(valorAltura);
@@ -16,36 +17,41 @@ document.querySelector('#formulario').addEventListener('submit', (e) => {
 		});
 		if (result < 18.5) {
 			resultClass = 'bad';
-			document.querySelector('#imc1').classList.add(resultClass);
-			document.querySelector('#quali1').classList.add(resultClass);
-			document.querySelector('#obs1').classList.add(resultClass);
+			let cor1 = document.querySelectorAll('#imc1, #quali1, #obs1')
+			cor1.forEach((ie1) => {
+				ie1.classList.add(resultClass);
+			});
 		};
 		if (result >= 18.5 && result <= 24.9) {
 			resultClass = 'bom';
-			document.querySelector('#imc2').classList.add(resultClass);
-			document.querySelector('#quali2').classList.add(resultClass);
-			document.querySelector('#obs2').classList.add(resultClass);
+			let cor2 = document.querySelectorAll('#imc2, #quali2, #obs2')
+			cor2.forEach((ie2) => {
+				ie2.classList.add(resultClass);
+			});
 		};
 		if (result >= 25.0 && result <= 29.9) {
 			resultClass = 'medio';
-			document.querySelector('#imc3').classList.add(resultClass);
-			document.querySelector('#quali3').classList.add(resultClass);
-			document.querySelector('#obs3').classList.add(resultClass);
+			let cor3 = document.querySelectorAll('#imc3, #quali3, #obs3')
+			cor3.forEach((ie3) => {
+				ie3.classList.add(resultClass);
+			});
 		};
 		if (result >= 30.0 && result <= 39.9) {
 			resultClass = 'bad';
-			document.querySelector('#imc4').classList.add(resultClass);
-			document.querySelector('#quali4').classList.add(resultClass);
-			document.querySelector('#obs4').classList.add(resultClass);
+			let cor4 = document.querySelectorAll('#imc4, #quali4, #obs4')
+			cor4.forEach((ie4) => {
+				ie4.classList.add(resultClass);
+			});
 		};
 		if (result >= 40.0) {
 			resultClass = 'bad';
-			document.querySelector('#imc5').classList.add(resultClass);
-			document.querySelector('#quali5').classList.add(resultClass);
-			document.querySelector('#obs5').classList.add(resultClass);
+			let cor5 = document.querySelectorAll('#imc5, #quali5, #obs5')
+			cor5.forEach((ie5) => {
+				ie5.classList.add(resultClass);
+			});
 		};
-		document.querySelector('#resultado').innerHTML = `<p class='${resultClass}'>Seu IMC É ${result}</p>`;
+		resultadoDiv.innerHTML = `<p class='${resultClass}'>Seu IMC É ${result}</p>`;
 	} else {
-		document.querySelector('#resultado').innerHTML = `Cara, digita um número direito!`;
+		resultadoDiv.innerHTML = `Cara, digita um número direito!`;
 	};
 });
